@@ -2,7 +2,7 @@
 import React from 'react'
 
 export default function InteractiveCard({children,contentname}:{children:React.ReactNode,contentname:string}){
-    function onCarSelected(){
+    function onCardSelected(){
         alert("You select " + contentname)
     }
     function onCardMouseAction(event: React.SyntheticEvent){
@@ -24,8 +24,8 @@ export default function InteractiveCard({children,contentname}:{children:React.R
         }
     }
     return(
-        <div className='m-4 w-64 h-80 rounded-lg shadow-lg bg-white' 
-        onClick={()=>onCarSelected()} 
+        <div className='w-1/6 h-[300px] rounded-lg shadow-lg bg-white' 
+        // onClick={()=>onCardSelected()} 
         onMouseOver={(e)=>onCardMouseAction(e)}
         onMouseOut={(e)=>onCardMouseAction(e)}>
             {children}
