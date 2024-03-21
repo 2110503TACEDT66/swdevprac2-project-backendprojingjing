@@ -1,6 +1,7 @@
 'use client'
 import Card from "./Card"
 import { useReducer } from "react";
+import Link from "next/link";
 
 export default function CardPanel() {
 
@@ -21,15 +22,29 @@ export default function CardPanel() {
     //สร้าง Map พร้อมค่าเริ่มต้น
     const [ratingList,dispatchRating] = useReducer(showRatingReducer,new Map([['Nexus CoLab', 5],['Hive Workspace', 5],['Innovate Hub', 5],['FlexiSpace', 5],['CollaboraZone', 5]]))
 
+
+    //Mock data na ja
+    const mockCoworkingspaceRepo = [
+        {cid: '001', name:'Nexus CoLab', image: "/img/coworkingspace1.jpg"},
+        {cid: '002', name:'Hive Workspace', image: "/img/coworkingspace2.jpg"},
+        {cid: '003', name:'Innovate Hub', image: "/img/coworkingspace3.jpg"},
+        {cid: '004', name:'FlexiSpace', image: "/img/coworkingspace4.jpg"},
+        {cid: '005', name:'CollaboraZone', image: "/img/coworkingspace5.jpg"},
+
+    ]
+
     return(
-        <div>
-            <div style={{margin:"20px",display:"flex",flexDirection:"row",
+        <div >
+            <div style={{margin:"20px",display:"flex",flexDirection:"col",
             flexWrap:"wrap",justifyContent:"space-around",alignContent:"space-around"}}>
-                <Card coworkingspaceName='Nexus CoLab' imgSrc="/img/coworkingspace1.jpg" onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
-                <Card coworkingspaceName='Hive Workspace' imgSrc="/img/coworkingspace2.jpg" onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
-                <Card coworkingspaceName='Innovate Hub' imgSrc="/img/coworkingspace3.jpg" onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
-                <Card coworkingspaceName='FlexiSpace' imgSrc="/img/coworkingspace4.jpg" onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
-                <Card coworkingspaceName='CollaboraZone' imgSrc="/img/coworkingspace5.jpg" onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
+            {
+                mockCoworkingspaceRepo.map((coworkingspaceItem)=>(
+                    <Link href={`coworkingspace/${coworkingspaceItem.cid}`}>
+                    <Card coworkingspaceName={coworkingspaceItem.name} imgSrc={coworkingspaceItem.image} onRating={(coworkingspace:string, newRating:number)=>dispatchRating({type:'add',coworkingspaceName:coworkingspace,rating:newRating})}/>
+                    </Link>
+                ))
+                    
+            } 
             </div>
 
             {Array.from(ratingList).map(([coworkingspace, rating]) => <div key={coworkingspace} data-testid={coworkingspace}
