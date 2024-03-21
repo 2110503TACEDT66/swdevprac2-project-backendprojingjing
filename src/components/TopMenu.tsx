@@ -8,7 +8,7 @@ export default function TopMenu(){
         <div className={styles.menucontainer}>
             <TopMenuItem title='Reservation' pageRef='/reservations'/>
             <Link href="/">
-                <Image src={'/img/logo.jpg'} className='h-[100%] w-auto hover:scale-105' alt='logo' 
+                <Image src={'/img/logo.png'} className='h-[100%] w-auto hover:scale-105' alt='logo' 
                     width={0} height={0} sizes='100vh' />
             </Link>
         </div>
