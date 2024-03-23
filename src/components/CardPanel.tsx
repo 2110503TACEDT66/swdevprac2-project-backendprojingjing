@@ -35,8 +35,8 @@ export default function CardPanel() {
 
     return(
         <div >
-            <div style={{margin:"20px",display:"flex",flexDirection:"col",
-            flexWrap:"wrap",justifyContent:"space-around",alignContent:"space-around"}}>
+            <div style={{margin:"20px",display:"flex"
+            ,flexWrap:"wrap",justifyContent:"space-around",alignContent:"space-around"}}>
             {
                 mockCoworkingspaceRepo.map((coworkingspaceItem)=>(
                     <Link href={`coworkingspace/${coworkingspaceItem.cid}`}>

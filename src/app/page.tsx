@@ -4,12 +4,14 @@ import Banner from '@/components/Banner'
 import Card from "@/components/Card"
 import CardPanel from '@/components/CardPanel'
 import PromoteCard from '@/components/PromoteCard'
-
+import Detail from '@/components/Detail'
 export default function Home() {
   return (
-    <main>
+    <main className='justify-center bg-[#FFFFED]'>
       <Banner/>
-      <PromoteCard/>  
+      
+      <Detail/>
+      
     </main>
   )
 }

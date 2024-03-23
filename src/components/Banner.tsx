@@ -13,9 +13,7 @@ export default function Banner(){
             <Image src={covers[index%4]}
             alt='coworkingspace'
             fill={true}
-            priority
-            // objectFit='cover'
-            />
+            priority/>
             <div className='relative top-[100px] z-20 text-center bg-gray-50/70 mx-[15%]'>
                 <h1 className='text-4xl font-medium text-black bg-transparent-400'>
                     Co-working Space Reservation
