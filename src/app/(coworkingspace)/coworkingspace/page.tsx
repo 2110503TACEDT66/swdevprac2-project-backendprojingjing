@@ -9,12 +9,14 @@ export default function Coworkingspace(){
     const coworkingspaces= getCoworkingspaces()
 
     return(
-        <main className="text-center p-5 text-black">
-            <h1 className="text-x1 font-medium text-black">Select Your Coworkingspace
-            <Suspense fallback={<p>Loading... <LinearProgress/></p>}>
-                <CoworkingspaceCatalog coworkingspacesJson={coworkingspaces}/>
-            </Suspense>
-            </h1>
+        <main className="text-center p-5 ">
+            <h1 className="text-3xl font-medium font-semibold">Select Your Co-Working Space</h1>
+            <div className="flex flex-col">
+                <Suspense fallback={<p>Loading... <LinearProgress/></p>}>
+                    <CoworkingspaceCatalog coworkingspacesJson={coworkingspaces}/>
+                </Suspense>
+            </div>
+            
         </main>
     )
     

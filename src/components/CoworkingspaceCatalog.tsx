@@ -13,8 +13,8 @@ export default async function CoworkingspaceCatalog({coworkingspacesJson}:{cowor
 
     return(
         <>
-            <div style={{margin:"20px",display:"flex",
-            flexWrap:"wrap",justifyContent:"space-around",alignContent:"space-around"}}>
+            
+        <div className="m-[20px] flex flex-col items-center ">
         {
             CoworkingspaceJsonReady?.data.map((CoworkingspaceItem:CoworkingspaceItem)=>(
                 <Link href={`/coworkingspace/${CoworkingspaceItem.id}`}>

@@ -8,7 +8,7 @@ export default function Card({coworkingspaceName,imgSrc,onRating}:{coworkingspac
     const [value, setValue] = React.useState<number|null>(5);
     return(
         <InteractiveCard contentname={coworkingspaceName}>
-            <div className='w-full h-[70%] relative rounded-t-lg'>
+            <div className='w-full h-[70%] relative rounded-t-lg '>
                 <Image src={imgSrc}
                 alt='Coworkingspace Picture'
                 fill={true}
