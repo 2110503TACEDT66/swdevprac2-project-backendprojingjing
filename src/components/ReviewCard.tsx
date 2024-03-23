@@ -8,11 +8,11 @@ export default function ReviewCard({children,contentname}:{children:React.ReactN
             event.currentTarget.classList.remove('shadow-lg')
             event.currentTarget.classList.add('bg-gray-200')
             event.currentTarget.classList.add('shadow-xl')
-            event.currentTarget.classList.add('shadow-yellow-500/30')
+            event.currentTarget.classList.add('shadow-gray-500/30')
         } else {
             event.currentTarget.classList.remove('bg-gray-200')
             event.currentTarget.classList.remove('shadow-xl')
-            event.currentTarget.classList.remove('shadow-yellow-500/30')
+            event.currentTarget.classList.remove('shadow-gray-500/30')
             event.currentTarget.classList.add('bg-white')
             event.currentTarget.classList.add('shadow-lg')
         }

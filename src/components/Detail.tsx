@@ -26,14 +26,14 @@ export default function Detail() {
             <div className="flex flex-row justify-between mx-10">
                 <div className="bg-gray-200 rounded-xl border-2 w-5/12 text-lg flex flex-row" >           
                     <p className="m-10">
-                    Welcome to our vibrant coworking space designed to inspire productivity and collaboration. Situated in the heart of the city, our modern facility offers a dynamic environment where freelancers, entrepreneurs, and remote workers can thrive. With flexible workspaces, state-of-the-art amenities, and a diverse community of professionals, we provide the perfect setting for networking, brainstorming, and turning ideas into reality. Whether you need a private office for focused work or prefer the energy of an open-plan area, our space caters to your needs, fostering creativity and innovation every step of the way. Join us and experience a new way of working that combines comfort, convenience, and creativity in one dynamic location.
+                        Welcome to our vibrant coworking space designed to inspire productivity and collaboration. Situated in the heart of the city, our modern facility offers a dynamic environment where freelancers, entrepreneurs, and remote workers can thrive. With flexible workspaces, state-of-the-art amenities, and a diverse community of professionals, we provide the perfect setting for networking, brainstorming, and turning ideas into reality. Whether you need a private office for focused work or prefer the energy of an open-plan area, our space caters to your needs, fostering creativity and innovation every step of the way. Join us and experience a new way of working that combines comfort, convenience, and creativity in one dynamic location.
                     </p>
                 </div >
                 
                 <div className="w-5/12">
                     <button className="bg-[#000000] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl font-mono"> P R O M O T I O N </button>
                     <Link href={'/reservations'}><button className="bg-[#212121] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> R E S E R V E</button></Link>
-                    <button className="bg-[#303030] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> R E G I S T E R</button>
+                    <Link href={'/coworkingspace'}><button className="bg-[#303030] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> C O W O R K I N G S P A C E</button></Link>
                     <Link href={'/about'}><button className="bg-[#424242] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> A B O U T U S</button></Link>
                 </div>
             </div>

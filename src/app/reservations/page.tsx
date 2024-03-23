@@ -1,10 +1,23 @@
 import DateReserve from "@/components/DateReserve";
 import {Select,MenuItem} from "@mui/material";
 import TimeReserve from '@/components/TimeReserve'
+import { getServerSession } from "next-auth";
+import { authOptions } from "../api/auth/[...nextauth]/route";
+import getUserProfile from "@/libs/getUserProfile";
 
-export default function Reservation(){
+export default async function Reservation(){
+
+    const session = await getServerSession(authOptions)
+    if (!session || !session.user.token) return null
+
+    const profile = await getUserProfile(session.user.token)
+    var createdAt = new Date(profile.data.createdAt)
+
+
     return(
         <main >
+
+
             <form className="w-[100%] flex flex-col space-y-4 bg-white text-black-600 border border-gray-600
             font-semibold m-20 p-10 rounded-[5%] flex justify-center items-center shadow-xl" >
             <div className="text-x1 font-medium text-black text-3xl">Co-Workingspace Reservation</div>
