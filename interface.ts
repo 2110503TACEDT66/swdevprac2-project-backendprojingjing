@@ -10,7 +10,8 @@ interface CoworkingspaceItem {
     closetime: string,
     picture: string,
     __v: number,
-    id: string
+    id: string,
+    star: number
   }
   
   interface CoworkingspaceJson {

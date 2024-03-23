@@ -31,10 +31,10 @@ export default function Detail() {
                 </div >
                 
                 <div className="w-5/12">
-                    <button className="bg-[#000000] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl font-mono"> P R O M O T I O N </button>
-                    <Link href={'/reservations'}><button className="bg-[#212121] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> R E S E R V E</button></Link>
-                    <button className="bg-[#303030] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> R E G I S T E R</button>
-                    <Link href={'/about'}><button className="bg-[#424242] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl"> A B O U T U S</button></Link>
+                    <button className="bg-[#000000] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl font-mono hover:scale-105"> P R O M O T I O N </button>
+                    <Link href={'/reservations'}><button className="bg-[#212121] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl hover:scale-105"> R E S E R V E</button></Link>
+                    <button className="bg-[#303030] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl hover:scale-105"> R E G I S T E R</button>
+                    <Link href={'/about'}><button className="bg-[#424242] w-full h-[20%] p-[5%] text-white mb-[5%] text-lg rounded-xl hover:scale-105"> A B O U T U S</button></Link>
                 </div>
             </div>
             
