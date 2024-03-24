@@ -11,7 +11,7 @@ export default async function Reservation(){
     if (!session || !session.user.token) return null
 
     const profile = await getUserProfile(session.user.token)
-
+    var createdAt = new Date(profile.data.createdAt)
 
     return(
         <main className="flex flex-row ">
@@ -67,7 +67,7 @@ export default async function Reservation(){
                     <tr><td> ID:  </td><td>{profile.data._id}</td> </tr>
                     <tr><td> Email:  </td><td>{profile.data.email}</td> </tr>
                     <tr><td> Tel:  </td><td>{profile.data.telephone_number} </td></tr>
-                    <tr><td> Member Since:  </td><td>12/2/24</td> </tr>
+                    <tr><td> Member Since:  </td><td> {createdAt.toString()}</td> </tr>
     
                 </tbody>
             </table>

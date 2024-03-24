@@ -31,7 +31,7 @@ export default async function Coworkingspace({params}:{params:{cid:string}}) {
                     <div className="text-md mx-5 text-left">Postalcode: {coworkingspaceDetail.data.postalcode}</div>
                     <div className="text-md mx-5 text-left">Telephone_number: {coworkingspaceDetail.data.telephone_number}</div>
                     <div className="text-md mx-5 text-left">Opentime: {coworkingspaceDetail.data.opentime}</div>
-                    <div className="text-md mx-5 text-left">Cpentime: {coworkingspaceDetail.data.closetime}</div>
+                    <div className="text-md mx-5 text-left">Closetime: {coworkingspaceDetail.data.closetime}</div>
                 </div>
             </div>
         </main>
