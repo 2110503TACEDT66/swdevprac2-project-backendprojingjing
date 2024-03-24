@@ -7,6 +7,7 @@ import getCoworkingspaces from "@/libs/getCoworkingspaces"
 
 export default async function CoworkingspaceCatalog({coworkingspacesJson}:{coworkingspacesJson:Promise<CoworkingspaceJson>}){
     var CoworkingspaceJsonReady = await coworkingspacesJson
+
     if(!CoworkingspaceJsonReady){
         CoworkingspaceJsonReady=await getCoworkingspaces()
     }
@@ -19,11 +20,11 @@ export default async function CoworkingspaceCatalog({coworkingspacesJson}:{cowor
             CoworkingspaceJsonReady?.data.map((CoworkingspaceItem:CoworkingspaceItem)=>(
                 <Link href={`/coworkingspace/${CoworkingspaceItem.id}`}>
                 <Card coworkingspaceName={CoworkingspaceItem.name} imgSrc={CoworkingspaceItem.picture}
-                />
+                star={CoworkingspaceItem.star}/>
+                
                 </Link>
             ))
         }
-      
       </div>
         </>
     )
