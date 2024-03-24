@@ -12,6 +12,7 @@ export default function Banner(){
     const router = useRouter()
     const {data:session} = useSession()
     console.log(session)
+    console.log(session?.user?.name);
 
     return(
         <div className='block p-[5px] m-0 w-[100vw] h-[90vh] relative' onClick={()=>{setIndex(index+1)}}>
@@ -29,8 +30,9 @@ export default function Banner(){
                     Unlock your potential, collaborate in our space!
                 </h3>
             </div>
+            
             {
-                session?<div className='z-25 absolute top-5 right-10 font-semibold text-orange-600 text-xl'>Welcome {session.user?.name}</div> : null
+                session?<div className='text-center text-lg z-25 w-2/12 pt-8 pb-8 absolute bottom-[55%] left-[20%] border-2 shadow-xl shadow-white font-semibold bg-white text-white-600 text-xl'>Welcome {session.user?.name}</div> : null
             }
             <button className='bg-gray-200 text-gray-600 border border-black-600
             font-semibold py-2 px-2 m-2 rounded z-25 absolute bottom-5 right-10
