@@ -1,6 +1,5 @@
-import DateReserve from "@/components/DateReserve";
+import DateTimeReserve from "@/components/DateTimeReserve";
 import {Select,MenuItem} from "@mui/material";
-import TimeReserve from '@/components/TimeReserve'
 import { getServerSession } from "next-auth";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import getUserProfile from "@/libs/getUserProfile";
@@ -38,20 +37,12 @@ export default async function Reservation(){
                 <MenuItem value="Cospace2">Co-working space2 </MenuItem>
                 <MenuItem value="Cospace3">Co-working space3 </MenuItem>
                 </Select>
-                <br/>
-                <label htmlFor="Reservation Date" className="Reservation Date" id="reserveform">Reservation Date</label>
+                <label htmlFor="Reservation Date" className="Reservation Date" id="reserveform">Reservation Date and Time</label>
                 <div className="w-fit space space-y-1">
                     <div className="text-md text-left text-gray-600"></div>
-                    <DateReserve/>
+                    <DateTimeReserve/>
                 </div>
 
-                <label htmlFor="Reservation Time" className="Reservation Time" id="reserveform">Reservation Time</label>
-                {/* <div className="flex flex-row"> */}
-                    <div> Start time </div>
-                    <TimeReserve/>
-                    <div className="mx-5"> End time</div>
-                    <TimeReserve/>
-                {/* </div> */}
                 <br />             
 
                 <button type="submit" className="block rounded-md bg-sky-500 hover:bg-indigo-500 delay-100 px-3 py-2 shadow-sm">
