@@ -6,25 +6,22 @@ import { Select, MenuItem} from '@mui/material'
 import * as React from 'react';
 import { DemoContainer } from '@mui/x-date-pickers/internals/demo';
 import { TimePicker } from '@mui/x-date-pickers/TimePicker';
+import {useState } from 'react'
+import { Dayjs } from 'dayjs'
 
+export default function DateReserve({onDateChange, onTimeChange, onLocationChange} : {onDateChange: Function,onTimeChange: Function, onLocationChange: Function}){
 
-export default function DateReserve(){
+    const [ reserveDate, setReserveDate ] = useState<Dayjs| null>(null)
+    const [ reserveTime, setReserveTime ] = useState<Dayjs| null>(null)
+    const [ location, setLocation ] = useState('')
+
     return(
         <div className="text-center m-2">
-            <div className="text-x1 font-medium text-black text-3xl">Co-Workingspace Reservation</div>
+            
             <br/>
-                <label htmlFor="Name-Lastname" className="Name-Lastname" id="reserveform">Name-Lastname</label>
-                <input type="text" id="Name-Lastname" placeholder="Name-Lastname" 
-                className="MuiInput-input border-2 p-3"></input>
-                <br/>
-                <br/>
-                <label htmlFor="Citizen ID" className="Citizen ID" id="reserveform">Citizen ID</label>
-                <input type="text" id="Citizen ID" placeholder="Citizen ID" 
-                className="MuiInput-input border-2 p-3"></input>
-                <br/>
-                <br/>
-                <label htmlFor="coworkingspace" className="MuiSelect-select'" id="reserveform">Coworkingspace</label>
-                <Select variant="standard" name="coworkingspace" id="coworkingspace"
+                
+                <Select variant="standard" name="coworkingspace" id="coworkingspace" value={location}
+                onChange={(e)=>{setLocation(e.target.value); onLocationChange(e.target.value);}}
                 className="h-[2em] w-[200px] border-2 p-3">
                 <MenuItem value="Nexus CoLab">Nexus CoLab </MenuItem>
                 <MenuItem value="Hive Workspace">Hive Workspace </MenuItem>
@@ -43,15 +40,22 @@ export default function DateReserve(){
                             
                 <div>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DatePicker className="bg-white "/>
+                    <DatePicker className="bg-white "
+                    value={reserveDate}
+                    onChange={(value)=>{setReserveDate(value); onDateChange(value)}}
+                    />
                     </LocalizationProvider>
                 </div>
             
                 <div>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
                     <DemoContainer components={['TimePicker']}>
-                    <TimePicker label="Basic time picker" />
+                    <TimePicker label="Basic time picker" 
+                    value={reserveTime}
+                    onChange={(value)=>{setReserveTime(value); onTimeChange(value)}}
+                    />
                     </DemoContainer>
+                    
                     </LocalizationProvider>
                 </div>
         </div>

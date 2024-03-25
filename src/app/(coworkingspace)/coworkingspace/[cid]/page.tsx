@@ -1,5 +1,6 @@
 import Image from "next/image";
 import getCoworkingspace from "@/libs/getCoworkingspace";
+import Link from "next/link";
 
 export default async function Coworkingspace({params}:{params:{cid:string}}) {
     
@@ -22,7 +23,7 @@ export default async function Coworkingspace({params}:{params:{cid:string}}) {
                     className="rounded-lg w-[100%]"/>
                 </div>
                 <div className="md:w-[70%] md:flex-row space-y-4 md:space-y-0 md:space-x-4 bg-gray-200 text-black-600 border border-gray-600
-                m-5 p-10 shadow-xl">
+                    m-5 p-10 shadow-xl">
                     <div className="text-md mx-5 text-left text-2xl">{coworkingspaceDetail.data.name}</div>
                     <br/>
                     <div className="text-md mx-5 text-left">Address: {coworkingspaceDetail.data.address}</div>
@@ -32,6 +33,11 @@ export default async function Coworkingspace({params}:{params:{cid:string}}) {
                     <div className="text-md mx-5 text-left">Telephone_number: {coworkingspaceDetail.data.telephone_number}</div>
                     <div className="text-md mx-5 text-left">Opentime: {coworkingspaceDetail.data.opentime}</div>
                     <div className="text-md mx-5 text-left">Closetime: {coworkingspaceDetail.data.closetime}</div>
+                    <Link href={`/reservations?id=${params.cid}&model=${coworkingspaceDetail.data.name}`}>
+                        <button className="block rounded-md bg-sky-600 hover:bg-indigo-600 px-3 py-1 text-white shadow-sm">
+                            Make Reservation
+                        </button>
+                    </Link>
                 </div>
             </div>
         </main>
