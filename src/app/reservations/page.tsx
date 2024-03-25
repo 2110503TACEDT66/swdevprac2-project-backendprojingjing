@@ -37,8 +37,8 @@ export default function Reservation(){
      const [reserveLocation, setReserveLocation] = useState<string>('');
 
     return(
-        <main className="flex flex-row ">
-            <form className="w-[100%] flex flex-col space-y-4 bg-white text-black-600 border border-gray-600
+        <main className="w-full flex flex-col items-center space-y-4">
+            <form className="w-[50%] flex flex-col space-y-4 bg-white text-black-600 border border-gray-600
             font-semibold m-20 p-10 rounded-[5%] flex justify-center items-center shadow-xl" >
                 <div className="text-x1 font-medium text-black text-3xl">Co-Workingspace Reservation</div>
                 <TextField
@@ -61,7 +61,8 @@ export default function Reservation(){
                     value={citizenID}
                     onChange={(e)=> setCitizenID(e.target.value)}
                    />
-                <div className="w-fit space space-y-1">
+                </form>
+                <div className='w-full flex flex-col items-center space-y-2'>
                     <div className="text-md text-left text-gray-600"></div>
                     <DateTimeReserve onDateChange={(value:Dayjs)=>{setReserveDate(value)}} onTimeChange={(value:Dayjs)=>{setReserveTime(value)}} onLocationChange={(value:string)=>setReserveLocation(value)}/>
                 </div>
@@ -69,7 +70,7 @@ export default function Reservation(){
                 onClick={makeReservation}>
                     Reserve Co-workingspace
                 </button>
-            </form>
+            
                 <div>
                 </div>
         </main>

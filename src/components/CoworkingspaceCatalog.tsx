@@ -4,6 +4,8 @@ import { useReducer } from "react"
 import Link from "next/link"
 import { useRef } from "react"
 import getCoworkingspaces from "@/libs/getCoworkingspaces"
+import { CoworkingspaceJson } from "../../interface"
+import { CoworkingspaceItem } from "../../interface"
 
 export default async function CoworkingspaceCatalog({coworkingspacesJson}:{coworkingspacesJson:Promise<CoworkingspaceJson>}){
     var CoworkingspaceJsonReady = await coworkingspacesJson
