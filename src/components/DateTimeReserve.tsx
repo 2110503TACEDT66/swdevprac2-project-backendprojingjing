@@ -12,24 +12,19 @@ export default function DateReserve(){
     return(
         <div className="bg-white rounded-1g space-x-5 space-y-2 w-fit px-10 py-5
         flex flex-row justify-center">
-            <table className="table-auto border-separate border-spacing-2 border-2
-                p-5 pr-10 w-3/6">
-                <tbody>
-                    <tr><td> 
+                <div>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DatePicker className="bg-white "/>
+                    <DatePicker className="bg-white "/>
                     </LocalizationProvider>
-                         </td><td>
-                            
+                </div>
+            
+                <div>
                     <LocalizationProvider dateAdapter={AdapterDayjs}>
-                        <DemoContainer components={['TimePicker']}>
+                    <DemoContainer components={['TimePicker']}>
                     <TimePicker label="Basic time picker" />
                     </DemoContainer>
                     </LocalizationProvider>
-                            </td> </tr>
-
-                </tbody>
-            </table>
+                </div>
         </div>
     )
 }
