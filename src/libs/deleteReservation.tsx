@@ -10,7 +10,6 @@ export default async function deleteReservation(token:string|undefined, id:strin
     if (!response.ok) {
         throw new Error('cannot create reservation')
     }
-
     alert('Success!')
     return await response.json()
 }
