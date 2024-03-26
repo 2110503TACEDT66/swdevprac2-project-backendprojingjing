@@ -1,4 +1,4 @@
-export default async function deleteReservation(token:string, id:string) {
+export default async function deleteReservation(token:string|undefined, id:string) {
     const response = await fetch(`https://presentation-day-1-backendprojingjing.vercel.app/api/v1/reservations/${id}`,{
         method: "DELETE",
         headers: {

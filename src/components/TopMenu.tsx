@@ -20,7 +20,7 @@ export default async function TopMenu(){
             <TopMenuItem title='Contact us' pageRef='/contact'/>
             <TopMenuItem title='myReservation' pageRef='/myreservation'/>
             <TopMenuItem title='Register' pageRef='/register'/>
-            <TopMenuItem title='Update' pageRef='/edit'/>
+            
             {
                 session
                 ?
