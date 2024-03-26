@@ -37,6 +37,14 @@ export default function ReservationList({reservationJson}:{reservationJson:Reser
                     onClick={() => {dispatch(removeReservation(reservationItem2._id)), deleteReservations(session?.user.token,reservationItem2._id)}}>
                         Remove
                     </button>
+                    <Link href={`/edit?id=${reservationItem2._id}`}>
+                    <button className="bg-yellow-400 text-black border border-transparent font-semibold py-2 px-2 m-3
+                    hover:bg-white hover:text-yellow-600 border-red-600 rounded-md shadow-lg shadow-blue-500/50 w-[100px]"
+                    >
+                        Edit
+                    </button>
+                    </Link>
+                    
             </div>   
                 ))
             }

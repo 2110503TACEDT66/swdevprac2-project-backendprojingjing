@@ -18,6 +18,7 @@ export default async function deleteReservations(token:string|undefined, id:stri
         throw new Error('cannot delete reservation')
     }
 
+    alert('Success!')
     return await response.json()
 }
 

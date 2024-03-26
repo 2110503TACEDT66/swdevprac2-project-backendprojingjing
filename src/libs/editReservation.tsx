@@ -1,7 +1,8 @@
 import { ReservationItemEdit } from "../../interface"
 
 
-export default async function editReservation(token: string,reservationId: string, reservationDate:string,timereservation:string){
+export default async function editReservation(token: string,reservationId: string|null, reservationDate:string,timereservation:string){
+  console.log('i sus');
    const response = await fetch(`https://presentation-day-1-backendprojingjing.vercel.app/api/v1/reservations/${reservationId}`,{
        method: "PUT",
        headers: {
