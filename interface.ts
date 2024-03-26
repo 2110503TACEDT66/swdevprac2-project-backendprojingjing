@@ -58,3 +58,8 @@ export interface ReservationJson {
   count: number,
   data: ReservationItem2[]
 }
+
+export interface ReservationItemEdit{
+  reservationDate: string
+  timeReservation: string
+}
