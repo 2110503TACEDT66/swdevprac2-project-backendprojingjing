@@ -22,12 +22,16 @@ export interface CoworkingspaceItem {
   }
 
 export interface ReservationItem{
-    name: string;
-    id: string;
-    cowork:string | null;
-    ReservationStartDate: string;
-    ReservationStartTime: string;
-    ReservationEndDate: string;
-    ReservationEndTime: string;
-    duration: number;
+    user:string;
+    coworkingId:string;
+    coworkingName: string;
+    reservationDate: string;
+    timereservation: string;
+}
+
+export interface User {
+  name:string,
+  email:string,
+  telephone_number:string,
+  password:string
 }
