@@ -13,7 +13,7 @@ import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Link from "next/link";
-import deleteReservation from '@/libs/deletereservation';
+import deleteReservation from '@/libs/deleteReservation';
 
 export default function ReservationList({ reservationJson }: { reservationJson: ReservationJson }) {
     const [reservingJsonReady, setReservingJsonReady] = useState<ReservationJson | null>(null);
