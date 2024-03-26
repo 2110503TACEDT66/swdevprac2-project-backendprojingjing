@@ -32,7 +32,7 @@ export default function Banner(){
             </div>
             
             {
-                session?<div className='text-center text-lg z-25 w-2/12 pt-8 pb-8 absolute bottom-[55%] left-[20%] border-2 shadow-xl shadow-white font-semibold bg-white text-white-600 text-xl'>Welcome {session.user?.name}</div> : null
+                session?<div className='text-black text-center text-lg z-25 w-2/12 pt-8 pb-8 absolute bottom-[55%] left-[20%] border-2 shadow-xl shadow-white font-semibold bg-white text-white-600 text-xl'>Welcome {session.user?.name}</div> : null
             }
             <button className='bg-gray-200 text-gray-600 border border-black-600
             font-semibold py-2 px-2 m-2 rounded z-25 absolute bottom-5 right-10

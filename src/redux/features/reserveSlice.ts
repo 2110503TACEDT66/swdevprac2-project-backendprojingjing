@@ -18,7 +18,8 @@ export const reserveSlice = createSlice({
         },
         removeReservation:(state,action:PayloadAction<string>)=>{
             const remainItems = state.reservationItems.filter(obj =>{
-                return ((obj.id !== action.payload));
+                return ((obj.id !== action.payload)) &&
+                    !((obj.duration)>180 || obj.duration<=0)
             })
             state.reservationItems = remainItems
         }

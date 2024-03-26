@@ -24,7 +24,10 @@ export interface CoworkingspaceItem {
 export interface ReservationItem{
     name: string;
     id: string;
-    cowork: string;
-    ReservationDate: string;
-    ReservationTime: string;
+    cowork:string | null;
+    ReservationStartDate: string;
+    ReservationStartTime: string;
+    ReservationEndDate: string;
+    ReservationEndTime: string;
+    duration: number;
 }

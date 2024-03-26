@@ -11,14 +11,15 @@ export default function ReservationList(){
         {
             ReservationItems.map((reservationItems) => (
                 
-                <div key={reservationItems.id} className="bg-slate-200 p-3 flex flex-col items-start space-y-2 m-4">
+                <div key={reservationItems.id} className="text-black bg-slate-200 p-3 flex flex-col items-start space-y-2 m-4">
                     
                     <div className="text-3xl font-bold">{reservationItems.name}</div>
                     <div></div>
                     <div>CITIZEN ID: {reservationItems.id}</div>
                     <div>CoWorkingSpace: {reservationItems.cowork}</div>
-                    <div>Date: {reservationItems.ReservationDate}</div>
-                    <div>Time: {reservationItems.ReservationTime}</div>
+                    <div>Reserve from  {reservationItems.ReservationStartDate} {reservationItems.ReservationStartTime} to {reservationItems.ReservationEndDate} {reservationItems.ReservationEndTime} 
+                    </div>
+                    <div>Duration: {reservationItems.duration} minutes</div>
                     <button className="bg-red-500 text-white border border-transparent font-semibold py-2 px-2 m-3
                     hover:bg-white hover:text-red-600 border-red-600 rounded-md shadow-lg shadow-blue-500/50 w-[100px]"
                     onClick={() => dispatch(removeReservation(reservationItems.id))}>
