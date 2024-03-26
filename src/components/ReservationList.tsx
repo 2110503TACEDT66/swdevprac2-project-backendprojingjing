@@ -44,7 +44,6 @@ export default function ReservationList({ reservationJson }: { reservationJson: 
             console.error('Error deleting reservation:', error);
         }
     };
-
     return (
         <>
             {reservingJsonReady && (
