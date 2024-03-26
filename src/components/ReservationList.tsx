@@ -1,15 +1,23 @@
+'use client'
 import { Link } from "@mui/material";
 import { ReservationItem2, ReservationJson } from "../../interface";
 import { removeReservation } from "@/redux/features/reserveSlice";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "@/redux/store";
 import { useAppSelector } from "@/redux/store";
+import deleteReservations from "@/libs/deleteReservation";
+import { useSession } from "next-auth/react";
 
-export default async function ReservationList({reservationJson}:{reservationJson:Promise<ReservationJson>}) {
+export default function ReservationList({reservationJson}:{reservationJson:ReservationJson}) {
 
     // const ReservationItems = useAppSelector((state)=> state.reserveSlice.reservationItems)
-    const reservingJsonReady = await reservationJson
-    // const dispatch = useDispatch<AppDispatch>()
+    const {data: session} = useSession()
+    const reservingJsonReady = reservationJson
+    const dispatch = useDispatch<AppDispatch>()
+    // = async () => {
+
+    // }
+    console.log(session?.user.token);
 
     return (
         <>
@@ -26,7 +34,7 @@ export default async function ReservationList({reservationJson}:{reservationJson
                     <div className="text-md">MemberSince {reservationItem2.createAt.toString()}</div>    
                     <button className="bg-red-500 text-white border border-transparent font-semibold py-2 px-2 m-3
                     hover:bg-white hover:text-red-600 border-red-600 rounded-md shadow-lg shadow-blue-500/50 w-[100px]"
-                    >
+                    onClick={() => {dispatch(removeReservation(reservationItem2._id)), deleteReservations(session?.user.token,reservationItem2._id)}}>
                         Remove
                     </button>
             </div>   

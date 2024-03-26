@@ -9,7 +9,7 @@ export default async function MyBooking() {
     const session = await getServerSession(authOptions)
     if (!session || !session.user.token) return null
 
-    const reservations = getReservations(session.user.token)
+    const reservations = await getReservations(session.user.token)
 
     return (
         <main>
