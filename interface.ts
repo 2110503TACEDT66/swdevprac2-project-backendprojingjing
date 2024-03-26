@@ -21,11 +21,11 @@ export interface CoworkingspaceItem {
     data: CoworkingspaceItem[]
   }
 
-export interface ReservationItem{
+export interface ReservationItem {
     user:string;
     coworkingId:string;
     coworkingName: string;
-    reservationDate: string;
+    reservationDate?: string;
     timereservation: string;
 }
 

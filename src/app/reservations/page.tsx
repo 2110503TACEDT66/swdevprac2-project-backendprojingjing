@@ -25,25 +25,25 @@ export default function Reservation(){
     const {data: session} = useSession()
     const urlParams=useSearchParams()
     const cid = urlParams.get('id')
-    const user = session?.user._id
+    const user = session?.user.email
     const name = urlParams.get('model')
 
     const dispatch = useDispatch<AppDispatch>();
     const [hasReserved, setHasReserved] = useState(false)
-
+    
     
     const makeReservation = async () => {
-        console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+        const dayString = reservationDate?.format('YYYY-MM-DDTHH:mm:ss.SSSZ')
+        console.log(dayString)
+        console.log(timereservation)
             if (cid && name && user && reservationDate && timereservation) {
-                console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
-                const item:ReservationItem = {
+                const item: ReservationItem = {
                     user: user,
                     coworkingId: cid,
                     coworkingName: name,
-                    reservationDate: dayjs(reservationDate).format("YYYY/MM/DD"),
-                    timereservation: dayjs(timereservation).format('HH:mm:ss'),
-                }
-                console.log('aaaaaaaaaaaaaaaaaaaaaaaaa' +item)
+                    reservationDate: dayString,
+                    timereservation: timereservation,
+                };
                 
                 const reserving = await createReservation(session.user.token, item);
                 console.log("Reserving result:", reserving);
@@ -69,7 +69,7 @@ export default function Reservation(){
             <div className="text-x1 font-medium text-black text-3xl">Co-Workingspace Reservation</div>
             {
                 name?<div>
-                        <div>Coworkingspace : {name} </div>
+                        <div className="text-black">Coworkingspace : {name} </div>
                     </div>
                 :
                 <div>
@@ -96,7 +96,7 @@ export default function Reservation(){
                 </LocalizationProvider>
             </div>
         
-            <div>
+            <form>
             <TextField
     variant='standard'
     margin="normal"
@@ -113,7 +113,7 @@ export default function Reservation(){
     }}
 />
 
-            </div>
+            </form>
         </div>
                 </div>
                 <button type="submit" className="block rounded-md bg-sky-500 hover:bg-indigo-500 delay-100 px-3 py-2 shadow-sm"
