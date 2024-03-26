@@ -28,7 +28,7 @@ export default async function Profile(){
                     <tr><td colSpan={2}>
                     <Link href="/api/auth/signout" className=''>
                         <div>
-                        <button type="submit" className="block rounded-md bg-red-400 hover:bg-red-500 delay-100 px-3 py-2 shadow-sm ml-[10px] mt-[5px]">
+                        <button type="submit" className="block rounded-md bg-red-400 hover:bg-red-500 hover:text-white delay-100 px-3 py-2 shadow-sm ml-[10px] mt-[5px]">
                         Log out
                         </button>
                         </div>

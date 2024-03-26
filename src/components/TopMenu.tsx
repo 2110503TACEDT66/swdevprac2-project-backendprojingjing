@@ -24,12 +24,12 @@ export default async function TopMenu(){
                 session
                 ?
                 <Link href="/profile">
-                <Image src={'/img/profile.png'} className='h-[100%] w-auto scale-90 hover:scale-100 absolute right-0 h-full' alt='logo' 
+                <Image src={'/img/profile.png'} className='h-[100%] w-auto scale-75 absolute right-0 h-full' alt='logo' 
                     width={0} height={0} sizes='100vh' />
                 </Link>
                 :
                 <Link href="/api/auth/signin" className=''>
-                    <div className='flex items-center absolute right-0 h-[100%] w-auto px-2 text-white text-sm'>Sign-In
+                    <div className='flex items-center absolute right-0 h-[100%] w-auto px-2 text-white text-lg font-semibold'>Sign-In
                     </div>
                 </Link>
             }

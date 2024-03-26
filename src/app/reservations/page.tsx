@@ -63,8 +63,8 @@ export default function Reservation(){
     const [time, setTime] = useState<string | null>("");
 
     return(
-        <main className="w-full flex flex-col items-center space-y-4">
-            <div className="w-[50%] flex flex-col space-y-4 bg-white text-black-600 border border-gray-600
+        <main className="w-full flex flex-col items-center space-y-4 ">
+            <div className="w-[50%] flex flex-col space-y-4 bg-white text-black-600 ring-4 ring-blue-500 border border-gray-600
             font-semibold m-20 p-10 rounded-[5%] flex justify-center items-center shadow-xl">
             <div className="text-x1 font-medium text-black text-3xl">Co-Workingspace Reservation</div>
             {
@@ -97,23 +97,23 @@ export default function Reservation(){
             </div>
         
             <form>
-            <TextField
-    variant='standard'
-    margin="normal"
-    fullWidth
-    id="time"
-    label="Time"
-    name="time"
-    value={time}
-    placeholder="00:00-03:00"
-    onChange={(e) => {
-        console.log('aaaaaaaaaaaaaaaaaasdasadasdasdas'); // Optional: log the input value
-        setTime(e.target.value);
-        setTimereservation(e.target.value);
-    }}
-/>
-
+                <TextField
+                    variant='standard'
+                    margin="normal"
+                    fullWidth
+                    id="time"
+                    label="Time"
+                    name="time"
+                    value={time}
+                    placeholder="00:00-03:00"
+                    onChange={(e) => {
+                    // console.log('aaaaaaaaaaaaaaaaaasdasadasdasdas'); // Optional: log the input value
+                    setTime(e.target.value);
+                    setTimereservation(e.target.value);
+                    }}
+                />
             </form>
+
         </div>
                 </div>
                 <button type="submit" className="block rounded-md bg-sky-500 hover:bg-indigo-500 delay-100 px-3 py-2 shadow-sm"

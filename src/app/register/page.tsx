@@ -3,6 +3,7 @@ import { User } from "../../../interface";
 import { FormEvent, useState } from "react";
 import userRegister from "@/libs/userRegister";
 import { signIn } from "next-auth/react";
+import Image from "next/image";
 
 export default function CreateUser() {
   const [hasRegistered, setHasRegistered] = useState(false);
@@ -58,13 +59,19 @@ export default function CreateUser() {
 
   return (
     <>
+
+      <Image src={'/img/cover1.jpg'}
+            alt='coworkingspace'
+            fill={true}
+            priority
+            />
       <div className="flex min-h-full w-auto flex-1 flex-col justify-center rounded-3xl px-6 py-12 md:px-15 md:mx-20 lg:mx-[300px]">
-        <div className="bg-white p-5 rounded-3xl drop-shadow-xl w-auto">
+        <div className="bg-gray-200/95 p-5 rounded-3xl drop-shadow-xl w-auto ">
           <div className="mt-4 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Register
           </div>
 
-          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+          <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm ">
             <form className="space-y-6" onSubmit={register}>
               <div>
                 <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900 ">
@@ -108,7 +115,7 @@ export default function CreateUser() {
 
                   <div>
                      <label htmlFor="telephone_number" className="block text-sm font-medium leading-6 text-gray-900 ">
-                        telephone_number
+                        Telephone_number
                      </label>
                      <div className="mt-2">
                      <input

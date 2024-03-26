@@ -14,7 +14,7 @@ export interface CoworkingspaceItem {
     star: number
   }
   
-  export  interface CoworkingspaceJson {
+export  interface CoworkingspaceJson {
     success: boolean,
     count: number,
     pagination: Object,
@@ -34,4 +34,27 @@ export interface User {
   email:string,
   telephone_number:string,
   password:string
+}
+
+export interface ReservationItem2 {
+  _id: string
+  reservationDate: string
+  user: string
+  coworkingspace: {
+                  _id: string
+                  name:string
+                  province:string
+                  telephone_number:string
+                  id:string
+                  }
+  timereservation:string
+  createAt: string
+  __v: string
+}
+
+
+export interface ReservationJson {
+  success: boolean,
+  count: number,
+  data: ReservationItem2[]
 }
