@@ -1,6 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ReservationItem } from "../../../interface";
-import deleteReservations from "@/libs/deleteReservation";
 import { useSession } from "next-auth/react";
 
 type Reservestate = {
