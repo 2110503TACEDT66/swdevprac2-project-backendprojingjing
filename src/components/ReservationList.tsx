@@ -13,9 +13,9 @@ import { LocalizationProvider, TimePicker } from "@mui/x-date-pickers";
 import { DatePicker } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import Link from "next/link";
-import deleteReservation from "@/libs/deleteReservation";
+import deleteReservation from '@/libs/deletereservation';
 
-export default function ReservationList({ reservationJson }: { reservationJson: Promise<ReservationJson> }) {
+export default function ReservationList({ reservationJson }: { reservationJson: ReservationJson }) {
     const [reservingJsonReady, setReservingJsonReady] = useState<ReservationJson | null>(null);
     const dispatch = useDispatch<AppDispatch>();
     const { data: session } = useSession();
@@ -23,27 +23,30 @@ export default function ReservationList({ reservationJson }: { reservationJson: 
     const urlParams = useSearchParams()
     
     useEffect(() => {
-        reservationJson.then((data) => {
-            setReservingJsonReady(data);
-        });
+        const fetchData = async () => {
+            try {
+                const data = await reservationJson;
+                setReservingJsonReady(data);
+            } catch (error) {
+                console.error('Error fetching reservation data:', error);
+            }
+        };
+        fetchData();
     }, []);
 
     const handleRemoveReservation = async (_id: string) => {
         try {
-            await deleteReservation(session.user.token, { _id });
+            await deleteReservation(session.user.token,  _id );
 
             dispatch(removeReservation(_id));
-
-            setReservingJsonReady(prevState => ({
-                ...prevState,
-                data: prevState.data.filter(reservation => reservation._id !== _id)
-            }));
 
             console.log("Reservation removed successfully!");
         } catch (error) {
             console.error('Error deleting reservation:', error);
         }
     };
+
+
     return (
         <>
             {reservingJsonReady && (
