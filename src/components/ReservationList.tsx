@@ -34,6 +34,7 @@ export default function ReservationList({ reservationJson }: { reservationJson: 
                             <tr>
                                 <th className="px-4 py-2">Coworking Space</th>
                                 <th className="px-4 py-2">Reservation Date</th>
+                                <th className="px-4 py-2">User</th>
                                 <th className="px-4 py-2">Province</th>
                                 <th className="px-4 py-2">Telephone Number</th>
                                 <th className="px-4 py-2">Duration</th>
@@ -46,6 +47,7 @@ export default function ReservationList({ reservationJson }: { reservationJson: 
                                 <tr key={reservationItem2.createAt} className="bg-gray-100 text-black">
                                     <td className="border px-4 py-2">{reservationItem2.coworkingspace.name}</td>
                                     <td className="border px-4 py-2">{reservationItem2.reservationDate}</td>
+                                    <td className="border px-4 py-2">{reservationItem2.user}</td>
                                     <td className="border px-4 py-2">{reservationItem2.coworkingspace.province}</td>
                                     <td className="border px-4 py-2">{reservationItem2.coworkingspace.telephone_number}</td>
                                     <td className="border px-4 py-2">{reservationItem2.timereservation}</td>
