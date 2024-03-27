@@ -16,7 +16,7 @@ export default async function createReservation(token:string, reservationItems: 
     })
 
     if (!response.ok) {
-        throw new Error('cannot create reservation')
+        // throw new Error('cannot create reservation')
     }
 
     return await response.json()
