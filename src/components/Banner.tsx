@@ -16,7 +16,7 @@ export default function Banner(){
 
     return(
         <div className='block p-[5px] m-0 w-[100vw] h-[90vh] relative' onClick={()=>{setIndex(index+1)}}>
-            <Image src={covers[index%4]}
+            <Image src= {covers[index%4]}
             alt='coworkingspace'
             fill={true}
             priority
@@ -37,7 +37,7 @@ export default function Banner(){
             <button className='bg-gray-200 text-gray-600 border border-black-600
             font-semibold py-2 px-2 m-2 rounded z-25 absolute bottom-5 right-10
             hover:bg-gray-600 hover:text-white hover:border-transparent'
-            onClick={(e)=>{e.stopPropagation;router.push('/coworkingspace')}}>
+            onClick={ (e)=>{e.stopPropagation;router.push('/coworkingspace')} }>
                 Select Co-Working Space
             </button>
         </div>
